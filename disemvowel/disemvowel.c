@@ -20,7 +20,7 @@ char *disemvowel(char *str) {
     }
   }
   int novindex = 0;
-  novowels = calloc(outputlen + 1, sizeof(char));
+  novowels = (char*)calloc(outputlen + 1, sizeof(char));
   for (int i=0; i<inputlen; i++) {
 	  bool isvowel = false;
 	  for (int v=0; v<10; v++) {
@@ -35,6 +35,6 @@ char *disemvowel(char *str) {
 		  novindex++;
 	  }
   }
-  novowels[outputlen+1] = '\0';
+  novowels[outputlen] = '\0';
   return novowels;
 }
